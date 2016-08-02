@@ -1,0 +1,21 @@
+//call the function MergeLists in your code to merge two sorted list having head pointers headA and headB respectively
+Node* MergeLists(Node* headA, Node* headB)
+{
+    //res will be store the sorted list after merging
+    struct Node* res=NULL;
+    if(a==NULL)
+        return (headB);
+    else if(b==NULL)
+        return (headA);
+    if(headA->data<=headB->data)
+    {
+        res=headA;
+        res->next=MergeLists(headA->next,headB);
+    }
+    else
+    {
+        res=headB;
+        res->next=MergeLists(headA,headB->next);
+    }
+    return (res);
+}
